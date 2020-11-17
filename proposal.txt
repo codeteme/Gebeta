@@ -1,8 +1,9 @@
 1.Project Description:
 * Gebeta
 * Gebeta is one of the oldest board games in the world.
-    The project will allow users to play against the computer.
-    It will also allow the users to play in multiplayer mode.
+    The project will allow two users to play against each other in a single account.
+    The project will allow a user to play against the computer.
+    The project might also allow the users to play in multiplayer mode.
 
 2. Competitive Analysis:
 * I have came across a mobile app appropriately called Gebeta.
@@ -20,7 +21,7 @@
     View  - the GUI component (a detailed plan is written in the following paragraph)
     Model - the game engine itself
           - this is where alpha-beta pruning comes into picture and the multiplayer option
-          (which will use lessons learned in network programming), and
+          (which I will make use of lessons learned in network programming), and
     Controller
 
     - Title of the game
@@ -48,9 +49,10 @@
 5. Timeline Plan:
 * By the end of Week 12, I will have build the GUI. Meanwhile, I will be studying alpha-beta pruning.
 * By the end of Week 13, I will have a working project that allows users to play against the computer.
-* By the end of Week 14, I will continue working on the alpha-pruning implementation. I will also being working on multiplayer option.
+* By the end of Week 14, I will continue working on the alpha-pruning implementation.
+                         I will also begin working on multiplayer option.
 
-6. Version Control Plan: I uploaded my project on Github. I will use the versional control
+6. Version Control Plan: I uploaded my project on Github. I will use the version control
                             tool according to best practices advised by professionals.
 
 7. Module List: I will not be using any external modules/hardware/technologies.
