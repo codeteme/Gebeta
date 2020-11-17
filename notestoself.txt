@@ -1,0 +1,32 @@
+I will use alpha-beta pruning.
+
+My primary reference material is the video: "Algorithms Explained – minimax and alpha-beta pruning"
+
+The static evaluation on the final positions would look at the number of marbles in the big bucket.
+In other words, the greater the number of marbles, the better the move is for the chosen player.
+If the number of marbles in the opposition's big bucket is larger than the chosen players, then the
+static evaluation will yield a negative result (marbles in b.b. of chose - marbles in b.b. of opposition)
+
+* The small holes will be buttons and the text will be the marbles in that hole.
+* The two big buckets will not be buttons. Rather, they will be labels with slightly large sizes.
+
+The game should have the following:
+* Title of the game
+* Label that indicates the current player
+* Label that indicates which row belongs to which player. (Player 1 and Player 2)
+* Button that reads 'Click here for instruction'.
+* Button for the small holes will be buttons and the text will be the marbles in that hole.
+* Labels of slightly large sizes for the two big buckets.
+* Button that allows for restart.
+
+Fancy stuff:
+    - An in-game move-by-move instruction.
+    - A sound and/or music option.
+    - Change the image of the buttons to number of marbles. I can use the free marble vectors and
+        use Adobe Illustrator to create copies of them. I can ask Ali for help here.
+
+
+* Pylint *
+A code linter is a tool for inspecting your code.
+Pylint is the most well known python linter. It helps your code follows the PEP style guide.
+
