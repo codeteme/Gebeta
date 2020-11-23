@@ -30,3 +30,5 @@ Fancy stuff:
 A code linter is a tool for inspecting your code.
 Pylint is the most well known python linter. It helps your code follows the PEP style guide.
 
+---
+According to professor, I should treat both the large and small buckets as part of one big list.

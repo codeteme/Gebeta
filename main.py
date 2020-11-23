@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 from model import *
 
+
 # The game should have the following:
 # * Title of the game
 # * Label that indicates the current player
@@ -31,29 +32,38 @@ class View:
         # https://stackoverflow.com/questions/4236182/generate-tkinter-buttons-dynamically
         self.smallBuckets = []
         self.largeBuckets = []
-        for i in range(12):
-            if i == 0:
-                leftLargeBucket = tk.Label(self.frmBuckets, text=self.model.getLargeBuckets()[0],
-                                           width=5, height=10,
-                                           borderwidth=2, relief="groove")
-                leftLargeBucket.grid(row=3, column=1, rowspan=5)
-                self.largeBuckets.append(leftLargeBucket)
-            if i == 7:
-                rightLargeBucket = tk.Label(self.frmBuckets, text=self.model.getLargeBuckets()[1],
-                                      width=5, height=10,
-                                      borderwidth=2, relief="groove")
-                self.largeBuckets.append(leftLargeBucket)
-                rightLargeBucket.grid(row=3, column=15, rowspan=5)
-                # rightLargeBucket.grid(row=i // 2, column=i % 6)
-            newSmallBucket = tk.Button(self.frmBuckets, text=self.model.getSmallBuckets()[i],
+
+        self.leftLargeBucket = tk.Label(self.frmBuckets, text=self.model.getLeftLargeBucket(),
+                                        width=5, height=10,
+                                        borderwidth=2, relief="groove")
+        self.leftLargeBucket.grid(row=3, column=1, rowspan=5)
+
+        self.rightLargeBucket = tk.Label(self.frmBuckets, text=self.model.getRightLargeBucket(),
+                                         width=5, height=10,
+                                         borderwidth=2, relief="groove")
+        self.rightLargeBucket.grid(row=3, column=17, rowspan=5)
+
+        for i in range(6):
+            newSmallBucket = tk.Button(self.frmBuckets, text=self.model.getAllBuckets()[i],
                                        width=10, height=5,
                                        command=lambda x=i: self.bucketPressed(x))
-            self.smallBuckets.append(newSmallBucket)
-            newSmallBucket.grid(row=(i // 6) + 6, column=(i % 6) + 6)
+            self.smallBuckets.insert(i, newSmallBucket)
+            newSmallBucket.grid(row=4, column=11 - i)
+
+        placeholder = tk.Button()
+        self.smallBuckets.insert(6, placeholder)
+
+        for i in range(7, 13):
+            newSmallBucket = tk.Button(self.frmBuckets, text=self.model.getAllBuckets()[i],
+                                       width=10, height=5,
+                                       command=lambda x=i: self.bucketPressed(x))
+            self.smallBuckets.insert(i, newSmallBucket)
+            newSmallBucket.grid(row=5, column=i-1)
+
         self.lblRowPlayer2 = tk.Label(master=self.frmBuckets, text=f'Player 2')
         self.lblRowPlayer2.grid(columnspan=30)
 
-        self.frmBuckets.grid(row=3, column=0, columnspan=3, rowspan=2)
+        self.frmBuckets.grid(row=3, column=0, columnspan=15, rowspan=2)
 
         # Create a new frame to hold the reset button
         self.frmRestart = tk.Frame(window)
@@ -68,11 +78,12 @@ class View:
             if self.model.isValidMove(x):
                 self.lblCurrentPlayer['text'] = f'Current Player: {self.model.getCurrentPlayer()}'
                 self.model.makeMove(x)
-                for i in range(2):
-                    self.largeBuckets[i]['text'] = str(self.model.getLargeBuckets()[i])
+                self.leftLargeBucket['text'] = str(self.model.getLeftLargeBucket())
+                self.rightLargeBucket['text'] = str(self.model.getRightLargeBucket())
                 # Modify the text attribute of the buckets to reflect the changes
-                for i in range(12):
-                    self.smallBuckets[i]['text'] = str(self.model.getSmallBuckets()[i])
+                for i in range(13):
+                    if i != 6:
+                        self.smallBuckets[i]['text'] = str(self.model.getAllBuckets()[i])
                 # Todo: Change the configuration of the image attribute
                 # Todo: Switch Players if last marble lands in
                 #       current player's big bucket

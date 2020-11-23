@@ -11,7 +11,7 @@
     My project will be inspired by the game. First, the mobile app allows
     users to play the Ethiopian version of the game as opposed to the
     slightly tweaked international version of the game. The project will
-    also implement the that particular version. The game will of course
+    also implement  that particular version. The game will of course
     include a file with concise note on the instructions to play the game.
     If possible, I will try to add an in-game instruction in addition to a
     instruction-only window.
