@@ -4,61 +4,41 @@ Term Project [15112]
 # Author: Temesgen Tewolde
 
 1.Project Description:
-* Gebeta
-* Gebeta is one of the oldest board games in the world.
-    The project will allow two users to play against each other in a single account.
-    The project will allow a user to play against the computer.
-    The project might also allow the users to play in multiplayer mode.
+* **Gebeta** is one of the oldest board games in the world. The objective of this project is to develop a web-based version of Gebeta that allows users to play against each other in a single account or against the computer. The project might also include a multiplayer mode.  
 
 2. Competitive Analysis:
-* I have came across a mobile app appropriately called Gebeta.
-    It has a fairly complicated GUI and multiple levels.
-    My project will be inspired by the game. First, the mobile app allows
-    users to play the Ethiopian version of the game as opposed to the
-    slightly tweaked international version of the game. The project will
-    also implement the that particular version. The game will of course
-    include a file with concise note on the instructions to play the game.
-    If possible, I will try to add an in-game instruction in addition to a
-    instruction-only window.
+* While researching Gebeta games, the author came across a mobile app with a complicated GUI and multiple levels. This project will be inspired by the mobile app, but it will implement the Ethiopian version of the game. The project will include concise instructions on how to play the game, and if possible, an in-game instruction window.
+
 
 3. Structural Plan:
 * The project will have 3 major components:
-    View  - the GUI component (a detailed plan is written in the following paragraph)
-    Model - the game engine itself
-          - this is where alpha-beta pruning comes into picture and the multiplayer option
-          (which I will make use of lessons learned in network programming), and
-    Controller
+    View: This will include the GUI component, which will have the following features:
+        - Title of the game
+        - Label indicating the current player
+        - Label indicating which row belongs to which player (Player 1 and Player 2)
+        - Button that reads 'Click here for instructions'
+        - Buttons representing the small holes with the text indicating the number of marbles in each hole
+        - Labels of slightly larger size for the two big buckets
+        - Button that allows for restart
 
-    - Title of the game
-    - Label that indicates the current player
-    - Label that indicates which row belongs to which player. (Player 1 and Player 2)
-    - Button that reads 'Click here for instruction'.
-    - Button for the small holes will be buttons and the text will be the marbles in that hole.
-    - Labels of slightly large sizes for the two big buckets.
-    - Button that allows for restart.
+    Model: This will be the game engine itself, including alpha-beta pruning and the multiplayer option, using lessons learned in network programming.
+    Controller: This will connect the View and Model components.
 
-    If possible I will add the following:
-    - An in-game move-by-move instruction.
-    - A sound and/or music option.
-    - Change the image of the buttons to number of marbles. I can use the free marble vectors and
-        use Adobe Illustrator to create copies of them.
-
+    If possible, the author will add the following features to the GUI:
+    - In-game move-by-move instructions
+    - Sound and/or music option
+    - Change the image of the buttons to the number of marbles using free marble vectors and Adobe Illustrator to create copies of them
 
 4. Algorithmic Plan:
-    I will employ alpha-beta pruning to allow a user to play against the computer.
-    The static evaluation on the final positions would look at the number of marbles in the big bucket.
-    In other words, the greater the number of marbles, the better the move is for the chosen player.
-    If the number of marbles in the opposition's big bucket is larger than the chosen player's, then the
-    static evaluation will yield a negative result (marbles in the big bucket of chosen player - marbles in big bucket of opposition player)
+* The author will use alpha-beta pruning to allow a user to play against the computer. The static evaluation on the final positions will consider the number of marbles in the big bucket, with a higher number of marbles being better for the chosen player. If the number of marbles in the opposition's big bucket is larger than the chosen player's, the static evaluation will yield a negative result.
 
 5. Timeline Plan:
-* By the end of Week 12, I will have build the GUI. Meanwhile, I will be studying alpha-beta pruning.
-* By the end of Week 13, I will have a working project that allows users to play against the computer.
-* By the end of Week 14, I will continue working on the alpha-pruning implementation.
-                         I will also begin working on multiplayer option.
-
-6. Version Control Plan: I uploaded my project on Github. I will use the version control
-                            tool according to best practices advised by professionals.
+* By the end of Week 12: Build the GUI and study alpha-beta pruning
+* By the end of Week 13: Develop a working project that allows users to play against the computer
+* By the end of Week 14: Continue working on the alpha-beta pruning implementation and begin working on the multiplayer option
+                         
+6. Version Control Plan: 
+* The author will upload the project on GitHub and use version control tools according to best practices advised by professionals.
 
 7. Module List: I will not be using any external modules/hardware/technologies.
 
